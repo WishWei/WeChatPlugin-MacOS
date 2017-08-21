@@ -26,6 +26,7 @@ FOUNDATION_EXPORT const unsigned char WeChatPluginVersionString[];
 - (id)SendTextMessage:(id)arg1 toUsrName:(id)arg2 msgText:(id)arg3 atUserList:(id)arg4;
 - (id)GetMsgData:(id)arg1 svrId:(long)arg2;
 - (void)AddLocalMsg:(id)arg1 msgData:(id)arg2;
+- (id)SendAppURLMessageFromUser:(id)arg1 toUsrName:(id)arg2 withTitle:(id)arg3 url:(id)arg4 description:(id)arg5 thumbnailData:(id)arg6;
 @end
 
 @interface MMServiceCenter : NSObject
