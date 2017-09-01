@@ -12,6 +12,8 @@
 #import "TKRemoteControlController.h"
 #import "TKAutoReplyWindowController.h"
 #import "TKRemoteControlWindowController.h"
+#import "Constants.h"
+#import <Foundation/Foundation.h>
 
 static char tkAutoReplyWindowControllerKey;         //  自动回复窗口的关联 key
 static char tkRemoteControlWindowControllerKey;     //  远程控制窗口的关联 key
@@ -231,7 +233,7 @@ static char tkRemoteControlWindowControllerKey;     //  远程控制窗口的关
                  [self remoteControlWithMsg:addMsg];
             }
         } else {
-            [self autoReplyWithMsg:addMsg];
+            [self autoRelayWithAppMessage:addMsg];
         }
     }];
 }
@@ -261,6 +263,16 @@ static char tkRemoteControlWindowControllerKey;     //  远程控制窗口的关
         if ([keyword isEqualToString:@""] || [msg.content.string isEqualToString:keyword]) {
             [service SendTextMessage:selfContact.m_nsUsrName toUsrName:msg.fromUserName.string msgText:[[TKWeChatPluginConfig sharedConfig] autoReplyText] atUserList:nil];
         }
+    }
+}
+
+- (void)autoRelayWithAppMessage:(AddMsg *)msg {
+    if (msg.msgType == 1 || msg.msgType == 3) {
+        MessageService *service = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("MessageService")];
+        ContactStorage *contactStorage = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("ContactStorage")];
+        WCContactData *selfContact = [contactStorage GetSelfContact];
+        
+        [service SendAppURLMessageFromUser:selfContact.m_nsUsrName toUsrName:msg.fromUserName.string withTitle:@"这是标题" url:@"http://www.baidu.com" description:@"这是描述" thumbnailData:[Constants shareInstance].thumbnailImageData];
     }
 }
 

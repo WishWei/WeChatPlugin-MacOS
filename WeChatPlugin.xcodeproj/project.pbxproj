@@ -31,6 +31,8 @@
 		52B5CF231F3B4631000D9DD9 /* TKRemoteControlWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 52B5CF0F1F3B4631000D9DD9 /* TKRemoteControlWindowController.h */; };
 		52B5CF241F3B4631000D9DD9 /* TKRemoteControlWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B5CF101F3B4631000D9DD9 /* TKRemoteControlWindowController.m */; };
 		52B5CF251F3B4631000D9DD9 /* TKRemoteControlWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B5CF111F3B4631000D9DD9 /* TKRemoteControlWindowController.xib */; };
+		DCD5F4951F59A23D0040A39C /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD5F4931F59A23D0040A39C /* Constants.h */; };
+		DCD5F4961F59A23D0040A39C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD5F4941F59A23D0040A39C /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		52B5CF0F1F3B4631000D9DD9 /* TKRemoteControlWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRemoteControlWindowController.h; sourceTree = "<group>"; };
 		52B5CF101F3B4631000D9DD9 /* TKRemoteControlWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRemoteControlWindowController.m; sourceTree = "<group>"; };
 		52B5CF111F3B4631000D9DD9 /* TKRemoteControlWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKRemoteControlWindowController.xib; sourceTree = "<group>"; };
+		DCD5F4931F59A23D0040A39C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		DCD5F4941F59A23D0040A39C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		52B5CEF41F3B4631000D9DD9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DCD5F48C1F59A18D0040A39C /* Constants */,
 				52B5CEF51F3B4631000D9DD9 /* Category */,
 				52B5CEF81F3B4631000D9DD9 /* Config */,
 				52B5CEFB1F3B4631000D9DD9 /* Controllers */,
@@ -209,6 +214,15 @@
 			path = RemoteControlWindowController;
 			sourceTree = "<group>";
 		};
+		DCD5F48C1F59A18D0040A39C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DCD5F4931F59A23D0040A39C /* Constants.h */,
+				DCD5F4941F59A23D0040A39C /* Constants.m */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -223,6 +237,7 @@
 				52B5CF121F3B4631000D9DD9 /* WeChat+hook.h in Headers */,
 				52B5CF231F3B4631000D9DD9 /* TKRemoteControlWindowController.h in Headers */,
 				52B5CF181F3B4631000D9DD9 /* TKRemoteControlModel.h in Headers */,
+				DCD5F4951F59A23D0040A39C /* Constants.h in Headers */,
 				52B5CF201F3B4631000D9DD9 /* TKAutoReplyWindowController.h in Headers */,
 				52B5CF141F3B4631000D9DD9 /* TKWeChatPluginConfig.h in Headers */,
 				52B5CF1E1F3B4631000D9DD9 /* TKRemoteControlCell.h in Headers */,
@@ -318,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD5F4961F59A23D0040A39C /* Constants.m in Sources */,
 				52B5CF241F3B4631000D9DD9 /* TKRemoteControlWindowController.m in Sources */,
 				52B5CF211F3B4631000D9DD9 /* TKAutoReplyWindowController.m in Sources */,
 				52B5CF151F3B4631000D9DD9 /* TKWeChatPluginConfig.m in Sources */,
