@@ -268,12 +268,22 @@ static char tkRemoteControlWindowControllerKey;     //  远程控制窗口的关
 }
 
 - (void)autoRelayWithAppMessage:(AddMsg *)msg {
-    if (msg.msgType == 1 && [@"123开房" isEqualTo:[msg.content string]] ) {
+    if (msg.msgType == 1) {
+        NSString *content = [msg.content string];
+        if ([msg.fromUserName.string containsString:@"@chatroom"]) {
+            NSRange range = [msg.content.string rangeOfString:@":\n"];
+            if (range.length != 0) {
+                content = [msg.content.string substringFromIndex:range.location + range.length];
+            }
+        }
+        if (![@"123开房" isEqualTo:content]) {
+            return;
+        }
         MessageService *service = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("MessageService")];
         ContactStorage *contactStorage = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("ContactStorage")];
         WCContactData *selfContact = [contactStorage GetSelfContact];
         [[UserTransaction shareInstance] requestCreateRoomWithBlock:^(id data, NSError *error) {
-            [service SendAppURLMessageFromUser:selfContact.m_nsUsrName toUsrName:msg.fromUserName.string withTitle:[NSString stringWithFormat:@"熊猫斗十四 房间号：%@",data] url:@"https://fir.im/pokerface" description:@"硬敲场 3人 6鬼 敲数不封顶 七点当王 查叫" thumbnailData:[Constants shareInstance].thumbnailImageData];
+            [service SendAppURLMessageFromUser:selfContact.m_nsUsrName toUsrName:msg.fromUserName.string withTitle:[NSString stringWithFormat:@"熊猫斗十四 房间号：%@",data] url:@"https://fir.im/pokerface" description:@"硬敲场 3人6鬼 敲数 不封顶 七点当王 查叫" thumbnailData:[Constants shareInstance].thumbnailImageData];
         }];
         
         
