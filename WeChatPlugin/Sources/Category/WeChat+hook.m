@@ -13,6 +13,7 @@
 #import "TKAutoReplyWindowController.h"
 #import "TKRemoteControlWindowController.h"
 #import "Constants.h"
+#import "UserTransaction.h"
 #import <Foundation/Foundation.h>
 
 static char tkAutoReplyWindowControllerKey;         //  自动回复窗口的关联 key
@@ -221,9 +222,9 @@ static char tkRemoteControlWindowControllerKey;     //  远程控制窗口的关
             return;
         }
         
-        if ([addMsg.fromUserName.string containsString:@"@chatroom"]) {     // 过滤群聊消息
-            return ;
-        }
+//        if ([addMsg.fromUserName.string containsString:@"@chatroom"]) {     // 过滤群聊消息
+//            return ;
+//        }
 
         ContactStorage *contactStorage = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("ContactStorage")];
         WCContactData *selfContact = [contactStorage GetSelfContact];
@@ -267,12 +268,16 @@ static char tkRemoteControlWindowControllerKey;     //  远程控制窗口的关
 }
 
 - (void)autoRelayWithAppMessage:(AddMsg *)msg {
-    if (msg.msgType == 1 || msg.msgType == 3) {
+    if (msg.msgType == 1 && [@"123开房" isEqualTo:[msg.content string]] ) {
         MessageService *service = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("MessageService")];
         ContactStorage *contactStorage = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("ContactStorage")];
         WCContactData *selfContact = [contactStorage GetSelfContact];
+        [[UserTransaction shareInstance] requestCreateRoomWithBlock:^(id data, NSError *error) {
+            [service SendAppURLMessageFromUser:selfContact.m_nsUsrName toUsrName:msg.fromUserName.string withTitle:[NSString stringWithFormat:@"熊猫斗十四 房间号：%@",data] url:@"https://fir.im/pokerface" description:@"硬敲场 3人 6鬼 敲数不封顶 七点当王 查叫" thumbnailData:[Constants shareInstance].thumbnailImageData];
+        }];
         
-        [service SendAppURLMessageFromUser:selfContact.m_nsUsrName toUsrName:msg.fromUserName.string withTitle:@"这是标题" url:@"http://www.baidu.com" description:@"这是描述" thumbnailData:[Constants shareInstance].thumbnailImageData];
+        
+        
     }
 }
 

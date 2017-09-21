@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NetDefine.h"
 
 @interface UserTransaction : NSObject
 
 + (instancetype)shareInstance;
+
+- (void)requestCreateRoomWithBlock:(NetworkBlock)block;
 
 @end

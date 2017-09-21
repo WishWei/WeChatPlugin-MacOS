@@ -31,6 +31,12 @@
 		52B5CF231F3B4631000D9DD9 /* TKRemoteControlWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 52B5CF0F1F3B4631000D9DD9 /* TKRemoteControlWindowController.h */; };
 		52B5CF241F3B4631000D9DD9 /* TKRemoteControlWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B5CF101F3B4631000D9DD9 /* TKRemoteControlWindowController.m */; };
 		52B5CF251F3B4631000D9DD9 /* TKRemoteControlWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B5CF111F3B4631000D9DD9 /* TKRemoteControlWindowController.xib */; };
+		DCCAACB71F73B8810006168F /* NetRequestParam.h in Headers */ = {isa = PBXBuildFile; fileRef = DCCAACB51F73B8810006168F /* NetRequestParam.h */; };
+		DCCAACB81F73B8810006168F /* NetRequestParam.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCAACB61F73B8810006168F /* NetRequestParam.m */; };
+		DCCAACBB1F73B9880006168F /* NetDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = DCCAACB91F73B9880006168F /* NetDefine.h */; };
+		DCCAACBC1F73B9880006168F /* NetDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCAACBA1F73B9880006168F /* NetDefine.m */; };
+		DCCAACBF1F73BA270006168F /* RoomInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = DCCAACBD1F73BA270006168F /* RoomInfo.h */; };
+		DCCAACC01F73BA270006168F /* RoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCAACBE1F73BA270006168F /* RoomInfo.m */; };
 		DCD5F4951F59A23D0040A39C /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD5F4931F59A23D0040A39C /* Constants.h */; };
 		DCD5F4961F59A23D0040A39C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD5F4941F59A23D0040A39C /* Constants.m */; };
 		DCF786691F6E560300448C6C /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DCF786471F6E560300448C6C /* AFHTTPSessionManager.h */; };
@@ -97,6 +103,12 @@
 		52B5CF0F1F3B4631000D9DD9 /* TKRemoteControlWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRemoteControlWindowController.h; sourceTree = "<group>"; };
 		52B5CF101F3B4631000D9DD9 /* TKRemoteControlWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRemoteControlWindowController.m; sourceTree = "<group>"; };
 		52B5CF111F3B4631000D9DD9 /* TKRemoteControlWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKRemoteControlWindowController.xib; sourceTree = "<group>"; };
+		DCCAACB51F73B8810006168F /* NetRequestParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestParam.h; sourceTree = "<group>"; };
+		DCCAACB61F73B8810006168F /* NetRequestParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestParam.m; sourceTree = "<group>"; };
+		DCCAACB91F73B9880006168F /* NetDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetDefine.h; sourceTree = "<group>"; };
+		DCCAACBA1F73B9880006168F /* NetDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetDefine.m; sourceTree = "<group>"; };
+		DCCAACBD1F73BA270006168F /* RoomInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomInfo.h; sourceTree = "<group>"; };
+		DCCAACBE1F73BA270006168F /* RoomInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomInfo.m; sourceTree = "<group>"; };
 		DCD5F4931F59A23D0040A39C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		DCD5F4941F59A23D0040A39C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		DCF786471F6E560300448C6C /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -232,6 +244,10 @@
 			children = (
 				52B5CEFF1F3B4631000D9DD9 /* TKRemoteControlModel.h */,
 				52B5CF001F3B4631000D9DD9 /* TKRemoteControlModel.m */,
+				DCCAACB51F73B8810006168F /* NetRequestParam.h */,
+				DCCAACB61F73B8810006168F /* NetRequestParam.m */,
+				DCCAACBD1F73BA270006168F /* RoomInfo.h */,
+				DCCAACBE1F73BA270006168F /* RoomInfo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -292,6 +308,8 @@
 			children = (
 				DCD5F4931F59A23D0040A39C /* Constants.h */,
 				DCD5F4941F59A23D0040A39C /* Constants.m */,
+				DCCAACB91F73B9880006168F /* NetDefine.h */,
+				DCCAACBA1F73B9880006168F /* NetDefine.m */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -376,6 +394,7 @@
 				52B5CF1A1F3B4631000D9DD9 /* TKHelper.h in Headers */,
 				DCF786881F6E560300448C6C /* UIWebView+AFNetworking.h in Headers */,
 				DCF786691F6E560300448C6C /* AFHTTPSessionManager.h in Headers */,
+				DCCAACBF1F73BA270006168F /* RoomInfo.h in Headers */,
 				52B5CF1C1F3B4631000D9DD9 /* XMLReader.h in Headers */,
 				52B5CF161F3B4631000D9DD9 /* TKRemoteControlController.h in Headers */,
 				DCF786841F6E560300448C6C /* UIProgressView+AFNetworking.h in Headers */,
@@ -385,6 +404,8 @@
 				52B5CF121F3B4631000D9DD9 /* WeChat+hook.h in Headers */,
 				DCF786761F6E560300448C6C /* AFAutoPurgingImageCache.h in Headers */,
 				DCF7866C1F6E560300448C6C /* AFNetworkReachabilityManager.h in Headers */,
+				DCCAACB71F73B8810006168F /* NetRequestParam.h in Headers */,
+				DCCAACBB1F73B9880006168F /* NetDefine.h in Headers */,
 				52B5CF231F3B4631000D9DD9 /* TKRemoteControlWindowController.h in Headers */,
 				DCF786801F6E560300448C6C /* UIImage+AFNetworking.h in Headers */,
 				DCF7867E1F6E560300448C6C /* UIButton+AFNetworking.h in Headers */,
@@ -490,11 +511,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCF786751F6E560300448C6C /* AFURLSessionManager.m in Sources */,
+				DCCAACB81F73B8810006168F /* NetRequestParam.m in Sources */,
 				DCF7866F1F6E560300448C6C /* AFSecurityPolicy.m in Sources */,
 				DCD5F4961F59A23D0040A39C /* Constants.m in Sources */,
+				DCCAACC01F73BA270006168F /* RoomInfo.m in Sources */,
 				DCF7868D1F6E568400448C6C /* UserTransaction.m in Sources */,
 				DCF7866D1F6E560300448C6C /* AFNetworkReachabilityManager.m in Sources */,
 				DCF7867B1F6E560300448C6C /* AFNetworkActivityIndicatorManager.m in Sources */,
+				DCCAACBC1F73B9880006168F /* NetDefine.m in Sources */,
 				DCF786821F6E560300448C6C /* UIImageView+AFNetworking.m in Sources */,
 				52B5CF241F3B4631000D9DD9 /* TKRemoteControlWindowController.m in Sources */,
 				DCF7867D1F6E560300448C6C /* UIActivityIndicatorView+AFNetworking.m in Sources */,

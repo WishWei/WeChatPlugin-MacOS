@@ -34,6 +34,43 @@
     return self;
 }
 
+- (void)request:(NSString*)urlString withParams:(NSDictionary *)params withMethod:(RequestMethod) method withBlock:(NetworkBlock)block{
+    if(method == RequestMethodGET){
+        [self.afManager GET:urlString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            block(responseObject,nil);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            block(nil,error);
+        }];
+    }else if(method == RequestMethodPOST){
+        [self.afManager POST:urlString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            block(responseObject,nil);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            block(nil,error);
+        }];
+    }
+    
+}
+
+- (void)requestCreateRoomWithBlock:(NetworkBlock)block {
+    NSString *fullPath = @"http://120.25.2.235:8880/botcreate?userid=100008&gamemode=0";
+    [self request:fullPath withParams:nil withMethod:RequestMethodGET withBlock:^(id data, NSError *error) {
+        if(error){
+            error = [NSError errorWithDomain:@"网络异常" code:-9999 userInfo:nil];
+            block(nil,error);
+        }else{
+            NSArray *array = (NSArray*)data;
+            NSDictionary *dict = array[1];
+            NSString *id_ = [dict objectForKey:@"id"];
+            block(id_, nil);
+            
+        }
+    }];
+}
+
 
 
 @end
